@@ -20,7 +20,10 @@ jobs:
           node-version: 20
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
+
+      - name: Dar permissão ao Cypress
+        run: chmod +x ./node_modules/.bin/cypress
 
       - name: Executar testes Cypress
-        run: npm run cy:run
+        run: npx cypress run
