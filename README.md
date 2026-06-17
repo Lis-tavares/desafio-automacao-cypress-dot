@@ -8,13 +8,13 @@ https://www.saucedemo.com/
 
 ## Cenários automatizados
 
-| Feature | Cenário |
-|---|---|
-| Login | CT-001 - Realizar login com sucesso |
-| Login | CT-003 - Validar login com usuário bloqueado |
-| Carrinho de Compras | CT-004 - Adicionar produto ao carrinho |
-| Checkout | CT-009 - Validar campos obrigatórios no checkout |
-| Checkout | CT-011 - Finalizar compra com sucesso |
+| Feature             | Cenário                                          |
+| ------------------- | ------------------------------------------------ |
+| Login               | CT-001 - Realizar login com sucesso              |
+| Login               | CT-003 - Validar login com usuário bloqueado     |
+| Carrinho de Compras | CT-004 - Adicionar produto ao carrinho           |
+| Checkout            | CT-009 - Validar campos obrigatórios no checkout |
+| Checkout            | CT-011 - Finalizar compra com sucesso            |
 
 ## Justificativa da escolha
 
@@ -24,16 +24,17 @@ Esses fluxos possuem maior valor para execução recorrente em testes de regress
 
 ## Tecnologias utilizadas
 
-- Cypress
-- JavaScript
-- Node.js
-- GitHub Actions
+* Cypress
+* JavaScript
+* Node.js
+* GitHub Actions
 
 ## Como instalar o projeto
 
 ```bash
 npm install
 ```
+
 ## Como executar os testes em modo interativo
 
 ```bash
@@ -46,7 +47,6 @@ npm run cy:open
 npm run cy:run
 ```
 
-
 ## Pipeline
 
-O projeto possui pipeline configurado com GitHub Actions para execução automática dos testes a cada push ou pull request na branch main.
+O projeto possui pipeline configurado com GitHub Actions para execução automática dos testes a cada push ou pull request na branch `main`.
