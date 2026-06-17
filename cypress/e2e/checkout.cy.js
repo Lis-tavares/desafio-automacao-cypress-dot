@@ -1,30 +1,25 @@
-beforeEach(() => {
-  cy.login();
-});
+describe("Feature: Login", () => {
 
-it("CT-009 - Validar campos obrigatórios", () => {
-  cy.addProductToCart();
-  cy.goToCart();
-  cy.startCheckout();
+  it("CT-001 - Realizar login com sucesso", () => {
 
-  cy.get('[data-test="continue"]').click();
+    cy.login();
 
-  cy.get('[data-test="error"]').should("contain", "First Name is required");
-});
+    cy.url()
+      .should("include", "/inventory.html");
 
-it("CT-011 - Finalizar compra com sucesso", () => {
-  cy.addProductToCart();
-  cy.goToCart();
-  cy.startCheckout();
+    cy.contains("Products")
+      .should("be.visible");
 
-  cy.fillCheckoutInformation("Teste", "Silva", "09960000");
+  });
 
-  cy.get('[data-test="continue"]').click();
+  it("CT-003 - Validar login com usuário bloqueado", () => {
 
-  cy.get('[data-test="finish"]').click();
+    cy.loginLockedUser();
 
-  cy.get('[data-test="complete-header"]').should(
-    "have.text",
-    "Thank you for your order!",
-  );
+    cy.get('[data-test="error"]')
+      .should("be.visible")
+      .and("contain", "Sorry, this user has been locked out");
+
+  });
+
 });
