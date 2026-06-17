@@ -33,11 +33,18 @@ Esses fluxos possuem maior valor para execução recorrente em testes de regress
 
 ```bash
 npm install
-
+```
 ## Como executar os testes em modo interativo
+
+```bash
 npm run cy:open
+```
+
 ## Como executar os testes em modo headless
+
+```bash
 npm run cy:run
+```
 
 
 ## Pipeline
